@@ -1,173 +1,108 @@
-Nama Proyek Anda
-Ini adalah API untuk [jelaskan fungsi utama proyek Anda secara singkat, misal: "mengelola data produk dan kategori toko online"].
+# Nama Proyek Anda
 
-Apa Saja Isi Proyek Ini?
-Tentang Proyek: Penjelasan singkat proyek ini.
+Ini adalah API untuk **mengelola data kategori, konten, dan pengguna**, lengkap dengan fitur analisis dan rekomendasi.
 
-Fitur Utama: Apa saja yang bisa dilakukan API ini.
+---
 
-Teknologi: Alat dan bahasa yang dipakai.
+## 📌 Tentang Proyek
 
-Struktur Folder: Gambaran susunan folder proyek.
+Proyek ini dibuat untuk membantu **pengguna** dalam **mengelola berbagai jenis konten** yang diklasifikasikan berdasarkan kategori tertentu.  
+API ini menyediakan cara agar aplikasi lain bisa **mengambil, menyimpan, dan menganalisis data** terkait konten yang dimiliki pengguna.
 
-Yang Perlu Disiapkan: Software yang harus ada di komputermu.
+---
 
-Cara Instalasi: Langkah-langkah memasang proyek ini.
+## 🚀 Fitur Utama
 
-Cara Menjalankan: Bagaimana menjalankan API ini di komputermu.
+- **🔐 Login & Daftar Pengguna**  
+  Pengguna bisa mendaftar dan masuk ke sistem menggunakan token JWT.
 
-Daftar API (Endpoint): Alamat-alamat API yang bisa diakses.
+- **📂 Kelola Kategori**  
+  - Membuat, melihat, mengubah, dan menghapus kategori.  
+  - Mendukung sub-kategori (contoh: *Pakaian* → *Baju*, *Celana*)  
+  - Fitur klasifikasi otomatis berdasarkan teks.
 
-Tentang Proyek
-[Jelaskan dengan bahasa sederhana apa tujuan proyek ini. Misalnya: "Proyek ini dibuat untuk membantu [siapa] dalam [melakukan apa]. API ini menyediakan cara agar aplikasi lain bisa mengambil dan menyimpan data terkait [topik utama proyek]."]
+- **📝 Kelola Konten**  
+  - Upload gambar, teks, atau file lainnya.  
+  - Konten bisa difilter berdasarkan kategori.  
+  - Metadata (seperti tag) bisa diperbarui.
 
-Fitur Utama
-Login & Daftar Pengguna: Pengguna bisa mendaftar dan masuk ke sistem.
+- **📊 Analisis & Rekomendasi**  
+  - Lihat kategori yang paling sering digunakan.  
+  - Rekomendasi konten berdasarkan pola pengguna.
 
-Kelola Kategori: Membuat, melihat, mengubah, dan menghapus kategori. Ada juga fitur untuk mengelompokkan kategori (misal: "Pakaian" punya sub-kategori "Baju" dan "Celana") dan klasifikasi otomatis untuk teks.
+- **🎯 Kelola Target/Konsep**  
+  Membuat target atau konsep (misalnya: *Belajar Python*) dan memantau progres.
 
-Kelola Konten: Upload gambar, teks, atau file lain. Konten bisa difilter berdasarkan kategori dan metadatanya (seperti tag) bisa diubah.
+- **📁 Kelola File**  
+  Upload file dengan pemeriksaan kualitas konten.
 
-Analisis & Rekomendasi: Melihat kategori mana yang populer dan mendapatkan rekomendasi konten.
+---
 
-Kelola Target/Konsep: Membuat target tertentu (misal: "Belajar Python") dan memantau perkembangannya.
+## ⚙️ Teknologi
 
-Kelola File: Upload file dengan pemeriksaan kualitas.
+- **Bahasa**: Python
+- **Framework**: Flask
+- **Database**: PostgreSQL
+- **ORM**: Flask-SQLAlchemy
+- **Migrasi Database**: Flask-Migrate
+- **Keamanan Autentikasi**: Flask-JWT-Extended
+- **Lainnya**:
+  - `python-dotenv` (pengelola konfigurasi)
+  - `psycopg2-binary` (penghubung PostgreSQL)
 
-Teknologi
-Bahasa: Python
+---
 
-Framework: Flask (untuk membuat API)
+## 📁 Struktur Folder
 
-Database: PostgreSQL (tempat menyimpan data)
-
-Interaksi Database: Flask-SQLAlchemy
-
-Update Database: Flask-Migrate
-
-Keamanan Login: Flask-JWT-Extended
-
-Lainnya: python-dotenv (untuk konfigurasi), psycopg2-binary (penghubung ke PostgreSQL).
-
-Struktur Folder
-Berikut gambaran singkat susunan folder dalam proyek ini:
-
+```bash
 nama_proyek_anda/
-├── app/                    # Kode utama aplikasi ada di sini
-│   ├── auth/               # Urusan login, daftar pengguna
-│   ├── categories/         # Urusan kategori
-│   ├── contents/           # Urusan konten
-│   └── ... (folder fitur lainnya)
-├── migrations/             # Untuk update struktur database
-├── venv/                   # Folder khusus untuk Python proyek ini
-├── .env                    # Tempat menyimpan konfigurasi rahasia (JANGAN DI-UPLOAD)
-├── requirements.txt        # Daftar semua paket Python yang dipakai
-├── run.py                  # File untuk menjalankan aplikasi
-└── README.md               # File yang sedang kamu baca ini
+├── app/                    # Kode utama aplikasi
+│   ├── auth/               # Modul autentikasi
+│   ├── categories/         # Modul kategori
+│   ├── contents/           # Modul konten
+│   └── ...                 # Modul lainnya
+├── migrations/             # Folder migrasi database
+├── venv/                   # Virtual environment
+├── .env                    # Konfigurasi rahasia (JANGAN DI-UPLOAD)
+├── requirements.txt        # Daftar dependency
+├── run.py                  # Entry point aplikasi
+└── README.md               # Dokumentasi ini
 
-Yang Perlu Disiapkan
-Pastikan komputermu sudah terpasang:
+
+## 🧰 Yang Perlu Disiapkan
+Pastikan di komputer kamu sudah terpasang:
 
 Python (versi 3.8 atau lebih baru)
 
-pip (biasanya sudah ikut terpasang dengan Python)
+pip (biasanya sudah otomatis terpasang dengan Python)
 
-Git (untuk mengambil kode proyek)
+Git
 
-PostgreSQL (server database-nya)
+PostgreSQL
 
-Cara Instalasi
-Ambil Kode Proyek:
-Buka terminal atau command prompt, lalu ketik:
-
+## 🛠️ Cara Instalasi
+1. Clone Proyek
 git clone https://url_repository_anda.git
 cd nama_proyek_anda
 
-(Ganti https://url_repository_anda.git dengan alamat Git proyekmu)
-
-Buat Lingkungan Khusus (Virtual Environment):
-Ini agar paket Python proyek ini tidak tercampur dengan proyek lain.
-
+## 2. Buat Virtual Environment
 python -m venv venv
 
-Aktifkan:
+## 3. Aktifkan Virtual Environment
+venv\Scripts\activate
 
-Windows: venv\Scripts\activate
-
-macOS/Linux: source venv/bin/activate
-(Nanti akan muncul tulisan (venv) di awal baris terminalmu)
-
-Pasang Semua Paket yang Dibutuhkan:
-
+## 4. Install Dependensi
 pip install -r requirements.txt
 
-Konfigurasi Lingkungan
-Siapkan File .env:
-File ini berisi pengaturan penting seperti koneksi database. Buat file bernama .env di folder utama proyek. Isinya kira-kira seperti ini:
 
+⚙️ Konfigurasi Lingkungan
+## 1. Buat File .env
+Buat file .env di direktori utama dan isi seperti berikut:
 FLASK_APP=run.py
 FLASK_ENV=development
 SECRET_KEY=buat_kunci_rahasia_yang_panjang_dan_unik
 DATABASE_URL=postgresql://NAMA_PENGGUNA_DB:PASSWORD_DB@localhost:5432/NAMA_DATABASE_PROYEKMU
 
-PENTING:
-
-Ganti NAMA_PENGGUNA_DB, PASSWORD_DB, dan NAMA_DATABASE_PROYEKMU sesuai dengan pengaturan PostgreSQL di komputermu.
-
-Kamu mungkin perlu membuat database dan pengguna baru di PostgreSQL terlebih dahulu.
-
-Siapkan File .flaskenv:
-Buat file bernama .flaskenv di folder utama proyek. Isinya:
-
+## 2. Buat File .flaskenv
 FLASK_APP=run.py
 FLASK_ENV=development
-
-Siapkan Database
-Setelah konfigurasi di atas selesai, kita perlu membuat tabel-tabel di database:
-
-Inisialisasi Fitur Migrasi (cukup sekali saja untuk proyek baru):
-
-flask db init
-
-Buat Catatan Perubahan Database:
-
-flask db migrate -m "Membuat tabel awal."
-
-Terapkan Perubahan ke Database:
-
-flask db upgrade
-
-Jika nanti kamu mengubah struktur tabel (misalnya menambah kolom), ulangi langkah 2 dan 3.
-
-Cara Menjalankan
-Untuk menjalankan API ini di komputermu, ketik di terminal:
-
-flask run
-
-Biasanya API akan bisa diakses di alamat http://127.0.0.1:5000/.
-
-Daftar API (Endpoint)
-Berikut beberapa contoh alamat API yang bisa kamu coba (menggunakan Postman atau alat serupa):
-
-Pengguna:
-
-POST /auth/register (untuk daftar)
-
-POST /auth/login (untuk masuk)
-
-Kategori:
-
-POST /categories (buat kategori baru)
-
-GET /categories (lihat semua kategori)
-
-Konten:
-
-POST /contents (upload konten baru)
-
-GET /contents (lihat semua konten)
-
-(Untuk daftar lengkap dan cara pakainya, lihat kode di dalam folder app/nama_modul/routes.py)
-
-Semoga berhasil! Jika ada pertanyaan, jangan ragu untuk bertanya.
-Dibuat oleh: [Nama Anda/Tim Anda]
