@@ -51,6 +51,23 @@ class Config:
     # JWT_ACCESS_TOKEN_EXPIRES = timedelta(hours=1) # Token kedaluwarsa dalam 1 jam
     # JWT_REFRESH_TOKEN_EXPIRES = timedelta(days=30) # Refresh token kedaluwarsa dalam 30 hari
 
+    # --- KONFIGURASI UPLOAD FILE ---
+    UPLOAD_FOLDER = os.environ.get("UPLOAD_FOLDER") or os.path.join(basedir, "uploads")
+    ALLOWED_EXTENSIONS = {
+        "txt",
+        "pdf",
+        "png",
+        "jpg",
+        "jpeg",
+        "gif",
+        "doc",
+        "docx",
+        "xls",
+        "xlsx",
+    }
+    MAX_CONTENT_LENGTH = 16 * 1024 * 1024  # Batas ukuran file: 16MB
+    # --- AKHIR KONFIGURASI UPLOAD FILE ---
+
 
 class DevelopmentConfig(Config):
     """Konfigurasi untuk lingkungan pengembangan."""
@@ -69,6 +86,7 @@ class TestingConfig(Config):
     SQLALCHEMY_DATABASE_URI = "sqlite:///:memory:"  # Contoh: database SQLite in-memory
     # Nonaktifkan CSRF protection dalam form saat testing (jika menggunakan Flask-WTF)
     # WTF_CSRF_ENABLED = False
+    UPLOAD_FOLDER = os.path.join(basedir, "test_uploads")
 
 
 class ProductionConfig(Config):

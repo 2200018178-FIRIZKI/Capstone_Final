@@ -104,3 +104,9 @@ celerybeat.pid
 
 # File spesifik Windows
 *.lnk
+
+
+# ... (konten .gitignore lainnya) ...
+
+# Folder untuk file yang diunggah
+uploads/
